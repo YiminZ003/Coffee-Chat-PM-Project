@@ -1,4 +1,4 @@
--- Coffee Chats prototype schema. Run in Supabase SQL Editor as the project owner.
+-- Open Chair prototype schema. Run in Supabase SQL Editor as the project owner.
 -- These are deliberately public-to-signed-in community profiles, not public internet records.
 create extension if not exists pgcrypto;
 

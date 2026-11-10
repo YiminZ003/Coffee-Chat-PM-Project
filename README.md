@@ -1,4 +1,6 @@
-# Coffee Chats ☕ — U of T networking prototype
+# Open Chair
+
+Pull up a chair. A U of T coffee chat prototype by Team 16 (AI Product Management, Rotman MMA, Fall 2026).
 
 A polished, end-to-end Next.js prototype that helps University of Toronto students and alumni figure out **who to reach out to and what to say**.
 

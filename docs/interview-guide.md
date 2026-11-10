@@ -1,4 +1,4 @@
-# Coffee Chats — user interviews (team deliverable)
+# Open Chair: user interviews (team deliverable)
 
 **Required by the course:** at least two real interviews; four if you have time. Don't present fictional feedback as interview findings.
 
