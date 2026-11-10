@@ -1,5 +1,5 @@
 import type { SVGProps } from "react";
-type IconName="coffee"|"arrow"|"arrow-up-right"|"sparkles"|"search"|"sliders"|"graduation"|"heart"|"users"|"calendar"|"check"|"menu"|"x"|"linkedin"|"mail"|"briefcase"|"chevron"|"arrow-left"|"bookmark"|"send"|"shield"|"star"|"plus"|"compass"|"message"|"clock"|"edit"|"logout"|"filter"|"refresh";
+type IconName="coffee"|"arrow"|"arrow-up-right"|"sparkles"|"search"|"sliders"|"graduation"|"heart"|"users"|"calendar"|"check"|"menu"|"x"|"linkedin"|"mail"|"briefcase"|"chevron"|"arrow-left"|"bookmark"|"send"|"shield"|"star"|"plus"|"compass"|"message"|"clock"|"edit"|"logout"|"filter"|"refresh"|"copy";
 const paths:Record<IconName,React.ReactNode>={
  coffee:<><path d="M5 8h14v8a6 6 0 0 1-6 6h-2a6 6 0 0 1-6-6V8Z"/><path d="M19 9h1a3 3 0 0 1 0 6h-1M3 22h18M9 2v3m6-3v3"/></>,
  arrow:<><path d="M4 12h16m-7-7 7 7-7 7"/></>,
@@ -30,6 +30,7 @@ const paths:Record<IconName,React.ReactNode>={
  edit:<><path d="m4 17-.5 4 4-.5L19 9l-3-3L4 17Zm9-10 3 3"/></>,
  logout:<><path d="M10 4H4v16h6M13 7l5 5-5 5M18 12H8"/></>,
  filter:<><path d="M3 4h18l-7 8v7l-4 2v-9L3 4Z"/></>,
- refresh:<><path d="M20 7v5h-5M4 17v-5h5M5.6 9A7 7 0 0 1 18 7l2 5M4 12l2 5a7 7 0 0 0 12-2"/></>
+ refresh:<><path d="M20 7v5h-5M4 17v-5h5M5.6 9A7 7 0 0 1 18 7l2 5M4 12l2 5a7 7 0 0 0 12-2"/></>,
+ copy:<><rect x="8" y="8" width="13" height="13"/><path d="M16 8V3H3v13h5"/></>
 };
 export function Icon({name,size=20,...props}:{name:IconName;size?:number}&SVGProps<SVGSVGElement>){return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true" {...props}>{paths[name]}</svg>;}

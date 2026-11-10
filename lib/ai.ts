@@ -5,7 +5,9 @@ export function templateSuggestions(viewer:Profile,target:Profile):Suggestions{
  const common=viewer.interests.find(i=>target.interests.some(j=>j.toLowerCase()===i.toLowerCase()));
  const reason=`${target.name} has experience in ${target.industry.toLowerCase()}${common?` and shares your interest in ${common.toLowerCase()}`:""}. Their background in ${target.program} could offer a useful perspective on your goal: ${clean(viewer.chat_goal,145)}.`;
  const first=target.name.split(" ")[0];
- const message=`Hi ${first}! I'm ${viewer.name}, a ${viewer.program} ${viewer.type==="student"?"student":"alum"} exploring ${viewer.industry.toLowerCase()}. I came across your profile and was interested in your experience as a ${target.role}. If you're open to it, I'd love to hear about your path and ask a few questions over a short coffee chat. Thanks for considering it!`;
+ const article=/^[aeiou]/i.test(target.role)?"an":"a";
+ const about=target.type==="alumni"?`I saw you work as ${article} ${target.role}`:`I saw you're in ${target.program}`;
+ const message=`Hi ${first}, I'm ${viewer.name}, a ${viewer.program} ${viewer.type==="student"?"student":"alum"} looking into ${viewer.industry.toLowerCase()}. ${about} and would like to hear how you got there. Would you have 20 minutes for a coffee chat in the next few weeks? Thanks either way.`;
  const questions=[`What led you to your current role in ${target.industry.toLowerCase()}?`,`What skills or experiences helped you most early in your career?`,`What would you recommend to someone with an interest in ${viewer.industry.toLowerCase()}?`,`Is there anything you wish you'd known when you were at U of T?`];
  return {reason,message,questions,mode:"template"};
 }
