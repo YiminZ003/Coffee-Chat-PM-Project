@@ -17,7 +17,7 @@ A polished, end-to-end Next.js prototype that helps University of Toronto studen
 | `/api/generate` | Server-side OpenAI-compatible model call; deterministic labeled template without a configured key |
 | `/auth/callback` | Auth code exchange and university email validation |
 
-**Demo mode:** 18 fictional, labeled profiles. No LinkedIn scraping, no use of real people without consent, no pretend “live alumni” contacts. Demo profile stored **only in the browser**. AI in demo mode returns clearly labeled **template suggestions**, never pretends a model ran. Demo does not schedule or contact a person.
+**Demo mode:** 24 fictional, labeled profiles. No LinkedIn scraping, no use of real people without consent, no pretend “live alumni” contacts. Demo profile stored **only in the browser**. AI in demo mode returns clearly labeled **template suggestions**, never pretends a model ran. Demo does not schedule or contact a person.
 
 ## Run locally
 
@@ -34,7 +34,7 @@ Open `http://localhost:3000`. Click **Get started → Explore the interactive de
 ## Connect real Supabase authentication and data
 
 1. In your team's existing Supabase project, run `supabase/schema.sql` in SQL Editor **after reviewing it**. This creates the profile table and row-level security (RLS) policies. If Cassie has already created a `profiles` table, **do not blindly run the SQL**. Compare schema and agree on one table definition first.
-2. Optionally run `supabase/seed.sql` to add the 18 explicitly fictional sample profiles. These records do not claim to be real people and remain visible only to authenticated U of T accounts under the RLS rules.
+2. Optionally run `supabase/seed.sql` to add the 24 explicitly fictional sample profiles. These records do not claim to be real people and remain visible only to authenticated U of T accounts under the RLS rules.
 3. Enable email OTP/magic links under **Supabase Authentication → Providers → Email**. Set Site URL to your deployed Vercel URL. Allow redirect URL `https://YOUR-APP.vercel.app/auth/callback` (and `http://localhost:3000/auth/callback` during development).
 4. In `.env.local` locally and in Vercel project settings, set **only** `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`. These are public client-side parameters. Never put a service-role key in the frontend.
 5. Set `NEXT_PUBLIC_ENABLE_DEMO=false` to disable the browser-only demo in your live authenticated release. For user interviews you may keep the demo enabled and explain the fictional data to interviewees.
