@@ -35,11 +35,7 @@ export function Nav({ active = "home", demo = false }: { active?: "home" | "peop
           )}
         </nav>
         <div className="header-actions">
-          {active === "home" ? (
-            <Link href="/login" className="btn btn-ink btn-sm">Sign in</Link>
-          ) : (
-            <Link href={`/me${q}`} className="btn btn-ghost btn-sm header-profile">Profile</Link>
-          )}
+          {active === "home" && <Link href="/login" className="btn btn-ink btn-sm">Sign in</Link>}
           <button
             type="button"
             className="header-toggle"

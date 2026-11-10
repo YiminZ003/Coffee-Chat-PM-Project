@@ -1,4 +1,7 @@
 export type PersonType = "alumni" | "student";
+/** Industries offered in onboarding, profile editing and the people filter. */
+export const INDUSTRIES = ["Banking", "Consulting", "Finance", "Healthcare", "Marketing", "Retail", "Sustainability", "Technology"] as const;
+export type Industry = (typeof INDUSTRIES)[number];
 export type Profile = {
   id: string;
   name: string;
@@ -6,6 +9,7 @@ export type Profile = {
   type: PersonType;
   program: string;
   class_year: number;
+  /** Usually one of INDUSTRIES; stays a string so older Supabase rows still load. */
   industry: string;
   role: string;
   interests: string[];

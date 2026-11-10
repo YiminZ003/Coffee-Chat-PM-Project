@@ -1,4 +1,4 @@
-import type { Profile } from "./types";
+import { INDUSTRIES, type Profile } from "./types";
 const base: Omit<Profile, "id" | "email" | "open_to_chats" | "is_sample">[] = [
   { name:"Sofia Chen",type:"alumni",program:"Rotman Commerce",class_year:2022,industry:"Technology",role:"Product Manager at a tech company",interests:["Product strategy","Design","AI"],chat_goal:"Share how I moved into product management",avatar_tone:"peach"},
   { name:"Daniel Park",type:"alumni",program:"Computer Science",class_year:2021,industry:"Technology",role:"Data Scientist",interests:["Machine learning","Data","Mentorship"],chat_goal:"Help students explore analytics careers",avatar_tone:"mint"},
@@ -20,6 +20,8 @@ const base: Omit<Profile, "id" | "email" | "open_to_chats" | "is_sample">[] = [
   { name:"Zara Ahmed",type:"alumni",program:"Computer Science",class_year:2023,industry:"Technology",role:"AI Solutions Specialist",interests:["Generative AI","Product","Ethics"],chat_goal:"Discuss responsible use of AI at work",avatar_tone:"yellow"},
 ];
 export const sampleProfiles: Profile[] = base.map((p,i) => ({...p,id:`10000000-0000-4000-8000-${String(i+1).padStart(12,"0")}`, email:null,open_to_chats:true,is_sample:true}));
-export const industries=["Technology","Consulting","Finance","Healthcare","Marketing","Sustainability"];
+export const industries: string[] = [...INDUSTRIES];
+/** "Shared industry" match used for sorting and the card badge. */
+export const sameIndustry = (a?: string | null, b?: string | null) => Boolean(a && b && a.trim().toLowerCase() === b.trim().toLowerCase());
 export const programs=["Rotman MMA","Rotman Commerce","Computer Science","Engineering","Economics","Public Health"];
 export const defaultDemoProfile: Profile={id:"demo-local-user",name:"U of T Explorer",email:"explorer@utoronto.ca",type:"student",program:"Rotman MMA",class_year:2027,industry:"Technology",role:"Aspiring Data Analyst",interests:["Analytics","AI","Career advice"],chat_goal:"Learn about career paths and make meaningful connections",open_to_chats:true,is_sample:false,avatar_tone:"mint"};
