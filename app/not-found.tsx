@@ -1,4 +1,18 @@
 import Link from "next/link";
-import {Nav,Footer} from "@/components/nav";
-import {Icon} from "@/components/icons";
-export default function NotFound(){return <><Nav/><main className="not-found container"><div className="eyebrow">A LITTLE DETOUR</div><h1>That page has <em>stepped out for coffee.</em></h1><p>It might be unavailable or no longer open to the community.</p><Link href="/" className="btn btn-primary">Back home <Icon name="arrow" size={18}/></Link></main><Footer/></>}
+import { Nav, Footer } from "@/components/nav";
+import { Icon } from "@/components/icons";
+
+export default function NotFound() {
+  return (
+    <>
+      <Nav />
+      <main className="container not-found">
+        <span className="label label-mute page-kicker"><span className="num">404</span> Not found</span>
+        <h1 className="display-l">Nothing at this address.</h1>
+        <p className="lede">The page moved, or the profile isn&apos;t open to chats anymore.</p>
+        <Link href="/" className="btn btn-ink">Back home <Icon name="arrow" size={16} /></Link>
+      </main>
+      <Footer />
+    </>
+  );
+}
